@@ -1,10 +1,10 @@
 <?php
 
-class Matrix
+class MatrixHelper
 {
     public $map;
 
-    public function __construct(SiteMap $map)
+    public function __construct(SiteMapCreator $map)
     {
         $this->map = $map;
     }

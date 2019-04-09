@@ -1,6 +1,6 @@
 <?php
 
-include 'SiteMap.php';
+include 'SiteMapCreator.php';
 
 //calcMatrix();
 $links = explode("\n", file_get_contents('data/index.txt'));
@@ -34,7 +34,7 @@ foreach ($vector as $doc => $rank) {
 function calcMatrix()
 {
     $pages = explode("\n", file_get_contents('data/index.txt'));
-    $map = new SiteMap();
+    $map = new SiteMapCreator();
 
     $table = [];
     foreach ($pages as $page) {

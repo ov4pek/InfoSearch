@@ -1,6 +1,6 @@
 <?php
 
-include 'Matrix.php';
+include 'MatrixHelper.php';
 
 class TfIdf_Helper
 {
@@ -12,7 +12,7 @@ class TfIdf_Helper
 
     public function __construct($toCalc = false, $collectionVolume = 100)
     {
-        $this->list = Matrix::getWordsFromMatrix();
+        $this->list = MatrixHelper::getWordsFromMatrix();
         if ($toCalc) {
             $this->calcTfIdf();
         }

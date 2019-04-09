@@ -2,8 +2,8 @@
 //error_reporting(E_ALL);
 //ini_set('display_errors', 1);
 
-include 'TfIdf_Helper.php';
-require_once 'Matrix.php';
+include 'TfIdfHelper.php';
+require_once 'MatrixHelper.php';
 require_once 'phpmorphy-0.3.7/src/common.php';
 
 $dir = 'phpmorphy-0.3.7/dicts';
@@ -34,7 +34,7 @@ function prepareSearch(phpMorphy $morphy)
 {
     $result = explode(" ", strtolower($morphy->lemmatize(strtoupper($_GET['find']))[0]));
 
-    $list = Matrix::getWordsFromMatrix();
+    $list = MatrixHelper::getWordsFromMatrix();
 
     foreach ($result as $key => $word) {
         if (!in_array($word, $list)) {

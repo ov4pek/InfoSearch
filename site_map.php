@@ -3,8 +3,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require_once 'phpmorphy-0.3.7/src/common.php';
-include 'SiteMap.php';
-include 'Matrix.php';
+include 'SiteMapCreator.php';
+include 'MatrixHelper.php';
 
 $dir = 'phpmorphy-0.3.7/dicts';
 $lang = 'en_EN';
@@ -16,12 +16,12 @@ try {
     die('Error occured while creating phpMorphy instance: ' . $e->getMessage());
 }
 
-$map = new SiteMap();
+$map = new SiteMapCreator();
 
 //$map->refreshHostPaths();
 //$map->updateFiles();
 //sleep(1);
 //$map->lemmatizeFiles($morphy);
 
-$matrix = new Matrix($map);
+$matrix = new MatrixHelper($map);
 $matrix->buildMatrix();

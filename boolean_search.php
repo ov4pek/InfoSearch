@@ -1,6 +1,6 @@
 <?php
 
-include 'Matrix.php';
+include 'MatrixHelper.php';
 require_once 'phpmorphy-0.3.7/src/common.php';
 
 $dir = 'phpmorphy-0.3.7/dicts';
@@ -14,7 +14,7 @@ try {
 }
 
 $words = explode(" ", strtolower($morphy->lemmatize(strtoupper($_GET['find']))[0]));
-$list = Matrix::getWordsFromMatrix();
+$list = MatrixHelper::getWordsFromMatrix();
 
 $result = [];
 foreach ($words as $word) {

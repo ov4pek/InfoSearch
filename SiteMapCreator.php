@@ -1,6 +1,6 @@
 <?php
 
-class SiteMap
+class SiteMapCreator
 {
     public $host;
     public $host_paths;
